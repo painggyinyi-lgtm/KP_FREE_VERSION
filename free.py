@@ -5,7 +5,7 @@ import urllib3
 # Warning များကို ပိတ်ထားရန်
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-CONFIG_FILE = "config_xezon.json"
+CONFIG_FILE = "config_kp.json"
 CACHE_FILE = os.path.expanduser("~/.aiden_license_cache.json")
 
 
@@ -22,14 +22,14 @@ R, G, Y, B, P, C, W, N = "\033[1;31m", "\033[1;32m", "\033[1;33m", "\033[1;34m",
 
 def banner():
     print("\033[1;35m" + "="*56)
-    print("██╗  ██╗███████╗███████╗ ██████╗ ███╗   ██╗")
-    print("╚██╗██╔╝██╔════╝╚══███╔╝██╔═══██╗████╗  ██║")
-    print(" ╚███╔╝ █████╗    ███╔╝ ██║   ██║██╔██╗ ██║")
-    print(" ██╔██╗ ██╔══╝   ███╔╝  ██║   ██║██║╚██╗██║")
-    print("██╔╝ ██╗███████╗███████╗╚██████╔╝██║ ╚████║")
-    print("╚═╝  ╚═╝╚══════╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝")
+    print("██╗    ██╗     ██╗██╗██╗")
+    print("██╗  ██╗       ██╗      ██╗")
+    print("██╗██╗         ██╗██╗██╗")
+    print("██╗  ██╗       ██╗")
+    print("██╗    ██╗     ██╗")
+    print("╚═╝    ╚═╝     ╚═╝")
     print("="*56 + "\033[0m")
-    print("\033[1;36m                    WELCOME TO XEZON\033[0m")
+    print("\033[1;36m                    WELCOME TO KP\033[0m")
     print(f"{G} Device ID : {W}{security_system.device_id}{N}")
     print(f"{Y} Expire    : {W}{EXPIRY_DATE_STR}{N}")
     print(f"{B}-------------------------------------------------------{N}")
@@ -215,7 +215,7 @@ def get_session_id():
 
     saved_user_mac = user_mac
 
-    session_url = "https://portal-as.ruijienetworks.com/api/auth/wifidog?stage=portal&gw_id=c4b25bf05ddc&gw_sn=H1U40B400486C&gw_address=192.168.110.1&gw_port=2060&ip=192.168.110.152&mac=1a:e5:f9:2d:21:1b&slot_num=11&nasip=192.168.1.159&ssid=VLAN233&ustate=0&mac_req=1&url=http%3A%2F%2F192.168.0.1%2F&chap_id=%5C251&chap_challenge=%5C123%5C121%5C325%5C044%5C226%5C345%5C334%5C007%5C152%"
+    session_url = "https://portal-as.ruijienetworks.com/api/auth/wifidog?stage=portal&gw_id=c4b25bf05ddc&gw_sn=H1U40B400486C&gw_address=192.168.110.1&gw_port=2060&ip=192.168.110.152&mac=1a:e5:f9:2d:21:1b&slot_num=11&nasip=192.168.1.159&ssid=VLAN233&ustate=0&mac_req=1&url=http%3A%2F%2F192.168.0.1%2F&chap_id=%5C251&chap_challenge=%5C123%5C121%5C325%5C044%5C226%5C345%5C334%5C007%5C152%5C020%5C046%5C056%5C305%5C145%5C245%5C252"
     session_url = replace_mac(session_url, user_mac)
     headers = {
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
